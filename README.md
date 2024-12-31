@@ -1,6 +1,5 @@
 # RufasDB
 
-
 [![npm version](https://img.shields.io/npm/v/rufasdb.svg)](https://www.npmjs.com/package/rufasdb)
 [![Development Status](https://img.shields.io/badge/status-beta-yellow.svg)](https://github.com/whaleen/rufasdb)
 

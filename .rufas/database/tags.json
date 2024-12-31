@@ -1,1 +1,55 @@
-[]
+[
+  {
+    "name": "core",
+    "description": "Full system foundation including the database engine, client interface, and type system. These files form the heart of RufasDB, implementing the Prisma-like query interface, CRUD operations, concurrency control through the locking mechanism, and the file system integration that enables persistent browser-based storage.",
+    "color": "#3B82F6",
+    "fileIds": [
+      "src/client.ts",
+      "src/engine.ts",
+      "src/index.ts",
+      "src/types.ts"
+    ],
+    "id": "t_1735660935207"
+  },
+  {
+    "name": "cli",
+    "description": "Command-line interface tooling focused on developer experience, particularly for schema management and type generation. These files enable developers to define their data models in a schema file and automatically generate corresponding TypeScript types for type-safe database operations.",
+    "color": "#f63c86",
+    "fileIds": [
+      "bin/rufas",
+      "src/cli/index.ts"
+    ],
+    "id": "t_1735660985159"
+  },
+  {
+    "name": "config",
+    "description": "Project configuration and build settings that define how the project is compiled, packaged, and distributed. These files specify TypeScript compilation options, npm package details, dependencies, and other crucial project metadata necessary for development and distribution.",
+    "color": "#696969",
+    "fileIds": [
+      "package.json",
+      "tsconfig.json"
+    ],
+    "id": "t_1735661010925"
+  },
+  {
+    "name": "doc",
+    "description": "Project documentation and licensing information that provides usage guides, API documentation, features overview, and license terms. These files help developers understand and properly implement RufasDB in their applications while clearly stating the terms of use.",
+    "color": "#a4c67b",
+    "fileIds": [
+      "docs/vision.md",
+      "LICENSE",
+      "README.md"
+    ],
+    "id": "t_1735661069534"
+  },
+  {
+    "name": "issue",
+    "description": "Documentation of bugs, missing features, and needed improvements in the codebase. Each issue tracks a specific problem with steps to reproduce, impact level, and potential solutions. Helps maintain code quality through systematic problem tracking and resolution.",
+    "color": "#47ff4e",
+    "fileIds": [
+      "issues/relationships-joins.md",
+      "issues/transaction-support.md"
+    ],
+    "id": "t_1735661219707"
+  }
+]

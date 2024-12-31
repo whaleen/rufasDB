@@ -1,15 +1,19 @@
 [
   {
     "name": "rufasDB",
-    "description": "all the files we have so far",
-    "isMaster": false,
+    "description": "All the project files we have so far. ",
+    "isMaster": true,
     "fileIds": [
       "bin/rufas",
+      "docs/vision.md",
+      "issues/relationships-joins.md",
+      "issues/transaction-support.md",
       "src/cli/index.ts",
       "src/client.ts",
       "src/engine.ts",
       "src/index.ts",
       "src/types.ts",
+      "LICENSE",
       "package.json",
       "README.md",
       "tsconfig.json"
@@ -17,19 +21,45 @@
     "id": "b_1735638431334",
     "createdAt": 1735638431334,
     "lastExport": {
-      "timestamp": 1735642366085,
+      "timestamp": 1735663422017,
       "fileIds": [
         "bin/rufas",
+        "docs/vision.md",
+        "issues/relationships-joins.md",
+        "issues/transaction-support.md",
         "src/cli/index.ts",
         "src/client.ts",
         "src/engine.ts",
         "src/index.ts",
         "src/types.ts",
+        "LICENSE",
         "package.json",
         "README.md",
         "tsconfig.json"
       ]
     },
     "status": "stale"
+  },
+  {
+    "name": "Core Engine",
+    "description": "Full system foundation including the database engine, client interface, and type system. These files form the heart of RufasDB, implementing the Prisma-like query interface, CRUD operations, concurrency control through the locking mechanism, and the file system integration that enables persistent browser-based storage.",
+    "isMaster": false,
+    "fileIds": [
+      "src/client.ts",
+      "src/engine.ts",
+      "src/index.ts",
+      "src/types.ts"
+    ],
+    "id": "b_1735661773490",
+    "createdAt": 1735661773490,
+    "lastExport": {
+      "timestamp": 1735661810745,
+      "fileIds": [
+        "src/client.ts",
+        "src/engine.ts",
+        "src/index.ts",
+        "src/types.ts"
+      ]
+    }
   }
 ]
