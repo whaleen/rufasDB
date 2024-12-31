@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rufas>
+<bundle_head>
+  <title>rufasDB</title>
+  <description>all the files we have so far</description>
+  <created_at>2024-12-31T09:47:12.981Z</created_at>
+  <bundle_id>b_1735638431334</bundle_id>
+</bundle_head>
+
+<documents>
+<document>
+<source>bin/rufas</source>
+<document_metadata>
+  
+  <tags>
+
+  </tags>
+  <last_modified>2024-12-31T09:39:33.311Z</last_modified>
+  <file_type>bin/rufas</file_type>
+</document_metadata>
+<content></content>
+</document>
+<document>
+<source>examples/basic-usage.ts</source>
+<document_metadata>
+  
+  <tags>
+
+  </tags>
+  <last_modified>2024-12-31T09:39:33.311Z</last_modified>
+  <file_type>ts</file_type>
+</document_metadata>
+<content></content>
+</document>
+<document>
+<source>examples/schema.rufas</source>
+<document_metadata>
+  
+  <tags>
+
+  </tags>
+  <last_modified>2024-12-31T09:39:33.311Z</last_modified>
+  <file_type>rufas</file_type>
+</document_metadata>
+<content></content>
+</document>
+<document>
+<source>src/cli/index.ts</source>
+<document_metadata>
+  
+  <tags>
+
+  </tags>
+  <last_modified>2024-12-31T09:40:15.696Z</last_modified>
+  <file_type>ts</file_type>
+</document_metadata>
+<content></content>
+</document>
+<document>
+<source>src/client.ts</source>
+<document_metadata>
+  
+  <tags>
+
+  </tags>
+  <last_modified>2024-12-31T09:44:03.420Z</last_modified>
+  <file_type>ts</file_type>
+</document_metadata>
+<content>// src/client.ts
+import { RufasEngine } from './engine'
+import type { QueryOptions } from './types'
+
+export class RufasClient<Schema> {
+  private engine: RufasEngine<Schema>
+
+  constructor(dirHandle: FileSystemDirectoryHandle, schema: Schema) {
+    this.engine = new RufasEngine<Schema>(dirHandle, schema)
+  }
+
+  model<T extends keyof Schema>(name: T) {
+    return {
+      findMany: (options?: QueryOptions<Schema[T]>) =>
+        this.engine.findMany(name, options),
+
+      create: (data: Omit<Schema[T], 'id'>) => this.engine.create(name, data),
+
+      update: (id: string, data: Partial<Schema[T]>) =>
+        this.engine.update(name, id, data),
+
+      delete: (id: string) => this.engine.delete(name, id),
+    }
+  }
+}
+</content>
+</document>
+<document>
+<source>src/engine.ts</source>
+<document_metadata>
+  
+  <tags>
+
+  </tags>
+  <last_modified>2024-12-31T09:39:33.311Z</last_modified>
+  <file_type>ts</file_type>
+</document_metadata>
+<content></content>
+</document>
+<document>
+<source>src/index.ts</source>
+<document_metadata>
+  
+  <tags>
+
+  </tags>
+  <last_modified>2024-12-31T09:44:39.765Z</last_modified>
+  <file_type>ts</file_type>
+</document_metadata>
+<content>// src/index.ts
+export * from './client'
+export * from './types'
+</content>
+</document>
+<document>
+<source>src/types.ts</source>
+<document_metadata>
+  
+  <tags>
+
+  </tags>
+  <last_modified>2024-12-31T09:41:58.649Z</last_modified>
+  <file_type>ts</file_type>
+</document_metadata>
+<content>// src/types.ts
+export type Operators = {
+  equals?: any
+  gt?: number
+  gte?: number
+  lt?: number
+  lte?: number
+  contains?: string
+  startsWith?: string
+  endsWith?: string
+  in?: any[]
+  notIn?: any[]
+}
+
+export type WhereCondition<T> = {
+  [K in keyof T]?: T[K] | Operators
+} & {
+  OR?: WhereCondition<T>[]
+  AND?: WhereCondition<T>[]
+  NOT?: WhereCondition<T>
+}
+
+export type QueryOptions<T> = {
+  where?: WhereCondition<T>
+  take?: number
+  skip?: number
+  orderBy?: { [K in keyof T]?: 'asc' | 'desc' }
+}
+</content>
+</document>
+<document>
+<source>package.json</source>
+<document_metadata>
+  
+  <tags>
+
+  </tags>
+  <last_modified>2024-12-31T09:44:51.860Z</last_modified>
+  <file_type>json</file_type>
+</document_metadata>
+<content>{
+  "name": "rufasdb",
+  "version": "0.0.1",
+  "description": "Prisma-like flat-file database for browser",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "rufas": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "generate": "node dist/cli/index.js generate"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "database",
+    "filesystem",
+    "browser",
+    "orm"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
+</content>
+</document>
+<document>
+<source>README.md</source>
+<document_metadata>
+  
+  <tags>
+
+  </tags>
+  <last_modified>2024-12-31T09:41:03.524Z</last_modified>
+  <file_type>md</file_type>
+</document_metadata>
+<content># Install
+
+npm install rufasdb
+
+# Create schema
+
+touch schema.rufas
+
+# Generate types
+
+npx rufas generate
+
+# Use in code
+
+import { RufasDB } from 'rufasdb'
+</content>
+</document>
+<document>
+<source>tsconfig.json</source>
+<document_metadata>
+  
+  <tags>
+
+  </tags>
+  <last_modified>2024-12-31T09:39:33.312Z</last_modified>
+  <file_type>json</file_type>
+</document_metadata>
+<content></content>
+</document>
+</documents>
+</rufas>

@@ -1,0 +1,31 @@
+{
+  "name": "rufasdb",
+  "version": "0.0.1-beta.0",
+  "description": "Prisma-like flat-file database for browser",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "rufas": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "generate": "node dist/cli/index.js generate"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "database",
+    "filesystem",
+    "browser",
+    "orm"
+  ],
+  "author": "whaleen",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "typescript": "^5.0.0"
+  }
+}
