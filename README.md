@@ -4,7 +4,7 @@
 [![npm version](https://img.shields.io/npm/v/rufasdb.svg)](https://www.npmjs.com/package/rufasdb)
 [![Development Status](https://img.shields.io/badge/status-beta-yellow.svg)](https://github.com/whaleen/rufasdb)
 
-RufasDB is a lightweight, Prisma-like flat-file database designed for browser environments. It provides a simple, intuitive ORM (Object-Relational Mapping) using the File System Access API to manage data persistently in web applications.
+RufasDB is a lightweight, flat-file database with a Prisma-like interface designed for browser environments. It provides a simple, intuitive ORM (Object-Relational Mapping) using the File System Access API to manage data persistently in web applications.
 
 ## Features
 
