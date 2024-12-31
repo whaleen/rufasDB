@@ -124,6 +124,13 @@
     "lastModified": 1735638118649
   },
   {
+    "id": "LICENSE",
+    "path": "LICENSE",
+    "tagIds": [],
+    "bundleIds": [],
+    "lastModified": 1735644367269
+  },
+  {
     "id": "package.json",
     "path": "package.json",
     "tagIds": [],
