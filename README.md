@@ -109,7 +109,7 @@ async function setupDatabase() {
 
 ## Query Options
 
-RufasDB supports a rich set of query options:
+RufasDB supports a basic set of query options:
 
 - `where`: Filter records with various conditions
   - Supports `equals`, `gt`, `gte`, `lt`, `lte`, `contains`, `startsWith`, `endsWith`
